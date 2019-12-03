@@ -1,0 +1,15 @@
+- name: install LAMP Stack
+  hosts: all
+  remote_user: whoami
+  become: true
+  become_method: sudo
+  gather_facts: true
+
+- name: Include Apache
+  import_playbook: apache.yaml
+
+- name: Include MySQL
+  import_playbook: mysql.yaml
+
+- name: Include MySQL
+  import_playbook: wordpress.yaml
