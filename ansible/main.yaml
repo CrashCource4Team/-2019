@@ -1,0 +1,33 @@
+- name: install apache & php
+  remote_user: whoami
+  hosts: all
+  become: true
+  become_method: sudo
+  gather_facts: true
+  tasks:
+    - name: "Install apache2"
+      package: name=apache2 state=latest
+    - name: "Install apache2-php5"
+      package: name=libapache2-mod-php state=latest
+    - name: "Install php-cli"
+      package: name=php-cli state=latest
+      #    - name: "Install php-mcrypt"
+      #      package: name=php-mcrypt state=latest
+    - name: "Install php-gd"
+      package: name=php-gd state=latest
+    - name: Install php-fpm
+      package: name=php-fpm state=latest
+    - name: Install php-common
+      package: name=php-common state=latest
+    - name: Install php-mbstring
+      package: name=php-mbstring state=latest
+    - name: Install php-xmlrpc
+      package: name=php-xmlrpc state=latest
+    - name: Install php-xml
+      package: name=php-xml state=latest
+    - name: Install php-mysql
+      package: name=php-mysql state=latest
+    - name: Install php zip
+      package: name=php-zip state=latest
+    - name: Install php-curl
+      package: name=php-curl state=latest
